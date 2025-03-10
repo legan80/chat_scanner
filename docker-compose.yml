@@ -1,0 +1,11 @@
+version: '3.8'
+
+services:
+  bot:
+    build: .
+    container_name: antispam_bot
+    restart: unless-stopped
+    volumes:
+      - .:/app  # Монтируем текущую директорию в контейнер
+    env_file:
+      - .env    # Используем переменные окружения из файла .env
